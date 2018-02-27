@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+	     h3{
+	        text-align: center;
+	     }
+	     .box01{
+	        max-width:500px;
+	        margin: 0 auto;
+	        border: 1px solid gray;
+	        padding:20px;
+	      }
+	      .box02{
+	        max-width:500px;
+	        margin: 0 auto;
+	        border: 1px solid gray;
+	        padding:20px;
+	        box-sizing: border-box;
+	      }
+	</style>
+	<body>
+	    <h3>在w3c的标准模式下的盒模型实际效果width = css定义的width（即css定义的宽度内包含了border,padding）</h3>
+	    <h3>部分浏览器下，实际效果width = border*2+padding*2+css定义的width;</h3>
+		<div class="box01">
+		   <p style="width:100%;background-color: darkgoldenrod;">
+		                   123
+		   </p>
+		</div>
+		
+		<h3>
+		             为了统一标准,采用box-sizing:border-box;限定。即实际效果width = css定义的width<br/>
+		           （即css定义的宽度内包含了border,padding）
+		</h3>
+		<div class="box02">
+		   <p style="width: 100%;background-color: darkgoldenrod;">
+		                123
+		    </p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Count numbers: <output id="result"></output></p>
+		<button onclick="startWorker()">Start Worker</button>
+		<button onclick="stopWorker()">Stop Worker</button>
+		<br /><br />
+
+		<script>
+			var worker = new Worker('js/worker.js');
+			function startWorker(){
+			   worker.addEventListener('message', function(e){  
+			    //e.data代表返回的数据
+				  document.getElementById('result').innerHTML = e.data;
+			   }, false);
+			}
+			function stopWorker(){ 
+			   console.log(worker);
+			   worker.terminate();
+			}
+			
+		</script>
+
+	</body>
+
+</html>
